@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs com Nomes e Funções Fora da Div</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2px;
+        }
+
+        .square-div {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;margin-top: 30px;
+        }
+
+        .square-div2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .square-div::before {
+            content: attr(data-number);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+
+        .name {
+            text-align: center;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .function {
+            text-align: center;
+            font-style: italic;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square-div" data-number="Nome">
+            <div class="square-div2" data-number="1">
+                <div class="name">Nome 1</div>
+            </div>
+            <p class="function">Função 1</p>
+        </div>
+        <div class="square-div" data-number="Nome">
+            <div class="square-div2" data-number="1">
+                <div class="name">Nome 1</div>
+            </div>
+            <p class="function">Função 1</p>
+        </div>
+        <div class="square-div" data-number="Nome">
+            <div class="square-div2" data-number="1">
+                <div class="name">Nome 1</div>
+            </div>
+            <p class="function">Função 1</p>
+        </div>
+        <div class="square-div" data-number="Nome">
+            <div class="square-div2" data-number="1">
+                <div class="name">Nome 1</div>
+            </div>
+            <p class="function">Função 1</p>
+        </div>
+        <div class="square-div" data-number="Nome">
+            <div class="square-div2" data-number="1">
+                <div class="name">Nome 1</div>
+            </div>
+            <p class="function">Função 1</p>
+        </div>
+        <div class="square-div" data-number="Nome">
+            <div class="square-div2" data-number="1">
+                <div class="name">Nome 1</div>
+            </div>
+            <p class="function">Função 1</p>
+        </div>
+    </div>
+</body>
+</html>
